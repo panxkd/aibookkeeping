@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xik.aibookkeeping.server.mapper.CategoryMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xik.aibookkeeping.pojo.entity.Category">
+        <id column="id" property="id" />
+        <result column="category" property="category" />
+        <result column="description" property="description" />
+        <result column="type" property="type" />
+        <result column="is_deleted" property="isDeleted" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="create_user" property="createUser" />
+        <result column="update_user" property="updateUser" />
+        <result column="is_system" property="isSystem" />
+        <result column="user_id" property="userId" />
+    </resultMap>
+
+</mapper>

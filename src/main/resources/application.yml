@@ -1,0 +1,75 @@
+spring:
+  application:
+    name: ai-bookkeeping
+  profiles:
+    active: pro
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${ai-bookkeeping.datasource.host}:${ai-bookkeeping.datasource.port}/${ai-bookkeeping.datasource.database}?useSSL=false&serverTimezone=UTC
+    username: ${ai-bookkeeping.datasource.username}
+    password: ${ai-bookkeeping.datasource.password}
+  data:
+    redis:
+      host: ${ai-bookkeeping.redis.host}
+      password: ${ai-bookkeeping.redis.password}
+      port: ${ai-bookkeeping.redis.port}
+      database: ${ai-bookkeeping.redis.database}
+  rabbitmq:
+    virtual-host: / #虚拟主机
+    host: ${ai-bookkeeping.rabbit.host}
+    port: ${ai-bookkeeping.rabbit.port}
+    username: ${ai-bookkeeping.rabbit.username}
+    password: ${ai-bookkeeping.rabbit.password}
+    listener:
+      simple:
+        acknowledge-mode: auto # 自动确认
+        default-requeue-rejected: false # 拒绝时不重新入队
+        prefetch: 10 # 预取数量
+  ai:
+    dashscope:
+      api-key: ${ai-bookkeeping.dashscope.api-key}
+      chat:
+        options:
+          model: qwen-plus
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+server:
+  port: ${ai-bookkeeping.server.port}  # 端口号
+  servlet:
+    context-path: /api
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+
+# springdoc-openapi
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: com.xik.aibookkeeping.server.controller
+# knife4j
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
+#  basic:
+#    username: ${ai-bookkeeping.knife4j.username}  #接口文档的账号密码
+#    password: ${ai-bookkeeping.knife4j.password}
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true  # 开启驼峰命名

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xik.aibookkeeping.server.mapper.ChatMessageMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xik.aibookkeeping.pojo.entity.ChatMessage">
+        <id column="id" property="id" />
+        <result column="session_id" property="sessionId" />
+        <result column="chat_session_id" property="chatSessionId" />
+        <result column="message_order" property="messageOrder" />
+        <result column="role_type" property="roleType" />
+        <result column="content" property="content" />
+        <result column="tokens" property="tokens" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+
+</mapper>

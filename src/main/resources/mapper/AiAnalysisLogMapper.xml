@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xik.aibookkeeping.server.mapper.AiAnalysisLogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xik.aibookkeeping.pojo.entity.AiAnalysisLog">
+        <id column="id" property="id" />
+        <result column="user_id" property="userId" />
+        <result column="analysis_type" property="analysisType" />
+        <result column="input_data" property="inputData" />
+        <result column="output_result" property="outputResult" />
+        <result column="model_used" property="modelUsed" />
+        <result column="cost_tokens" property="costTokens" />
+        <result column="status" property="status" />
+        <result column="created_time" property="createdTime" />
+        <result column="completed_time" property="completedTime" />
+    </resultMap>
+
+</mapper>

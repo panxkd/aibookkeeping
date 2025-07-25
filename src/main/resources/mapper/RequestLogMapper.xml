@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xik.aibookkeeping.server.mapper.RequestLogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xik.aibookkeeping.pojo.entity.RequestLog">
+        <id column="id" property="id" />
+        <result column="log_type" property="logType" />
+        <result column="module" property="module" />
+        <result column="action" property="action" />
+        <result column="user_id" property="userId" />
+        <result column="user_type" property="userType" />
+        <result column="ip_address" property="ipAddress" />
+        <result column="user_agent" property="userAgent" />
+        <result column="request_id" property="requestId" />
+        <result column="parameters" property="parameters" />
+        <result column="status" property="status" />
+        <result column="error_code" property="errorCode" />
+        <result column="error_message" property="errorMessage" />
+        <result column="execution_time" property="executionTime" />
+        <result column="data_before" property="dataBefore" />
+        <result column="data_after" property="dataAfter" />
+        <result column="create_time" property="createTime" />
+        <result column="extra_info" property="extraInfo" />
+        <result column="request_method" property="requestMethod" />
+        <result column="request_headers" property="requestHeaders" />
+        <result column="request_url" property="requestUrl" />
+        <result column="token" property="token" />
+    </resultMap>
+
+</mapper>
